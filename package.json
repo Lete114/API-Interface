@@ -1,7 +1,7 @@
 {
-  "name": "API-Interface",
+  "name": "api-interface",
   "version": "1.0.0",
-  "description": "",
+  "description": "API-Interface",
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --config ./webpack/dev.js",

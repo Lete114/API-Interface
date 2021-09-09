@@ -1,5 +1,4 @@
 const express = require('express');
-const ejs = require("ejs")
 
 /**
  * 启动服务
@@ -8,7 +7,6 @@ const ejs = require("ejs")
 module.exports = (PORTS) => {
   let app = express();
   app.use(express.urlencoded({ extended: true })) // 开启获取post请求参数
-  app.engine("html", ejs.__express)// ejs后缀名指定html
   const router = require("./src/router")// 路由
   router(app)
 

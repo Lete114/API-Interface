@@ -18,5 +18,10 @@ body {
   flex-direction: column;
   align-content: flex-start;
 }
+@media screen and (max-width: 900px) {
+  #main {
+    padding: 10px;
+  }
+}
 </style>
 

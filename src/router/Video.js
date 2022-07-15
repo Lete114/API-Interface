@@ -15,7 +15,7 @@ async function redirect_url(url) {
 }
 
 router.get('/douyin', async (req, res) => {
-  let url = req.query.url
+  let { url, type } = req.query
 
   let result = {}
   let video_id = null
@@ -137,6 +137,7 @@ router.get('/douyin', async (req, res) => {
     }
   })
 
+  if (type === 'mp4') return res.redirect(result.video.paly[0])
   res.status(200).send(utils.format(result))
 })
 
@@ -453,13 +454,12 @@ router.get('/kuaishou', async (req, res) => {
     // 无内容
     if (!data.data.visionVideoDetail) result = ERROR
     else {
-
       let temp = data.data.visionVideoDetail
       // 作者信息
-      result.author ={}
+      result.author = {}
       result.author.id = temp.author.id
-      result.author.nick=temp.author.name
-      result.author.avatar=temp.author.headerUrl
+      result.author.nick = temp.author.name
+      result.author.avatar = temp.author.headerUrl
 
       // 视频信息
       result.video = {}
@@ -473,10 +473,10 @@ router.get('/kuaishou', async (req, res) => {
       result.video.url = temp.photo.photoUrl
       result.video.title = temp.photo.caption
       // 标签
-      result.video.tags= []
-      temp.tags.forEach(item => result.video.tags.push(item.name));
+      result.video.tags = []
+      temp.tags.forEach((item) => result.video.tags.push(item.name))
 
-      console.log(result);
+      console.log(result)
 
       result = Object.assign(SUCCESS, data)
     }

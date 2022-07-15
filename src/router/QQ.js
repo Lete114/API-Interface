@@ -49,7 +49,7 @@ router.all('/:qq', async (req, res) => {
 // 获取qq头像
 router.all('/avatar/:qq', async (req, res) => {
   // 获取请求参数
-  let QQ = req.params.qq || req.body.qq
+  let { qq: QQ, type } = { ...(req.params || {}), ...(req.query || {}), ...(req.body || {}) }
 
   if (!QQUtils.isQQ(QQ)) {
     res.status(400).send(utils.format({ code: 400, msg: '请输入正确的QQ号' }))
@@ -60,6 +60,7 @@ router.all('/avatar/:qq', async (req, res) => {
   Avatar.avatar = await QQUtils.avatar(QQ)
   Avatar = Object.assign(SUCCESS, Avatar)
 
+  if (type === 'image') return res.redirect(Avatar.avatar[0])
   res.status(200).send(utils.format(Avatar))
 })
 

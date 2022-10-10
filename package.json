@@ -2,12 +2,13 @@
   "name": "api-interface",
   "version": "1.0.1",
   "description": "API-Interface",
-  "main": "index.js",
+  "main": "dist/src/main.js",
   "scripts": {
-    "dev": "webpack serve --config ./webpack/dev.js",
-    "build": "webpack --config ./webpack/prod.js",
-    "start": "node start.js",
-    "start:hot": "nodemon start.js"
+    "build": "tsc",
+    "start": "ts-node src/server.ts",
+    "start:hot": "nodemon src/server.ts",
+    "lint": "eslint src && prettier --check src",
+    "lint:fix": "eslint --fix src && prettier --check --write src"
   },
   "keywords": [
     "API",
@@ -23,31 +24,32 @@
   },
   "author": {
     "name": "Lete乐特",
-    "url": "https://www.imlete.cn.top"
+    "url": "https://www.imlete.cn"
   },
+  "homepage": "https://github.com/Lete114/API-Interface",
   "license": "MIT",
+  "files": [
+    "LICENSE",
+    "dist"
+  ],
   "dependencies": {
-    "axios": "^0.21.1",
-    "express": "^4.17.1",
-    "iconv-lite": "^0.4.24",
+    "body-data": "^1.0.6",
+    "dotenv": "^16.0.3",
     "jsdom": "^16.6.0",
-    "ua-parser-js": "^0.7.28",
-    "vue": "^3.2.9",
-    "vue-router": "^4.0.11"
+    "ua-parser-js": "^0.7.28"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.4",
-    "@vue/compiler-sfc": "^3.2.9",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.3.2",
+    "@types/jsdom": "^20.0.0",
+    "@types/node": "^18.8.3",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "eslint": "^8.24.0",
     "nodemon": "^2.0.19",
-    "style-loader": "^3.2.1",
-    "vue-loader": "^16.5.0",
-    "webpack": "^5.52.0",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.1.0",
-    "webpack-merge": "^5.8.0"
+    "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }

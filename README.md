@@ -141,7 +141,7 @@ APIInterface.videoDouyin({ url: 'https://v.douyin.com/MNHBD8d/' }).then((res) =>
 
 [返回列表目录](#目录)
 
-`/-/bing`
+`/-/img/bing`
 
 请求参数
 

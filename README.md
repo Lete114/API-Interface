@@ -128,6 +128,8 @@ APIInterface.videoDouyin({ url: 'https://v.douyin.com/MNHBD8d/' }).then((res) =>
 
 [返回列表目录](#目录)
 
+`/-/site?url=https://www.example.com`
+
 请求参数
 
 | 昵称 | 必填 | 类型   | 描述                                                                                                   |
@@ -138,6 +140,8 @@ APIInterface.videoDouyin({ url: 'https://v.douyin.com/MNHBD8d/' }).then((res) =>
 ### bing
 
 [返回列表目录](#目录)
+
+`/-/bing`
 
 请求参数
 
@@ -152,6 +156,8 @@ APIInterface.videoDouyin({ url: 'https://v.douyin.com/MNHBD8d/' }).then((res) =>
 
 [返回列表目录](#目录)
 
+`/-/qq/avatar?qq=123456`
+
 | 昵称 | 必填 | 类型   | 描述                                                                                        |
 | ---- | ---- | ------ | ------------------------------------------------------------------------------------------- |
 | qq   | ✅   | string | 要获取的 QQ 号头像                                                                          |
@@ -161,11 +167,15 @@ APIInterface.videoDouyin({ url: 'https://v.douyin.com/MNHBD8d/' }).then((res) =>
 
 [返回列表目录](#目录)
 
+`/-/qq/nick?qq=123456`
+
 | 昵称 | 必填 | 类型   | 描述               |
 | ---- | ---- | ------ | ------------------ |
 | qq   | ✅   | string | 要获取的 QQ 号头像 |
 
 ### qqStatus
+
+`/-/qq/status?qq=123456`
 
 [返回列表目录](#目录)
 
@@ -174,6 +184,8 @@ APIInterface.videoDouyin({ url: 'https://v.douyin.com/MNHBD8d/' }).then((res) =>
 | qq   | ✅   | string | 要获取的 QQ 号头像 |
 
 ### videoDouyin
+
+`/-/video/douyin?url=https://www.example.com`
 
 [返回列表目录](#目录)
 
@@ -186,12 +198,16 @@ APIInterface.videoDouyin({ url: 'https://v.douyin.com/MNHBD8d/' }).then((res) =>
 
 [返回列表目录](#目录)
 
+`/-/video/huoshan?url=https://www.example.com`
+
 | 昵称 | 必填 | 类型   | 描述                                                                                        |
 | ---- | ---- | ------ | ------------------------------------------------------------------------------------------- |
 | url  | ✅   | string | 可以是分享的短链接、长链接、视频 ID                                                         |
 | type |      | string | 当该字段等于 `image` 时，返回参数会新增一个 `redirect` 值为视频的地址，同时会重定向到该地址 |
 
 ### videoPipixia
+
+`/-/video/pipixia?url=https://www.example.com`
 
 [返回列表目录](#目录)
 
@@ -204,12 +220,16 @@ APIInterface.videoDouyin({ url: 'https://v.douyin.com/MNHBD8d/' }).then((res) =>
 
 [返回列表目录](#目录)
 
+`/-/video/weishi?url=https://www.example.com`
+
 | 昵称 | 必填 | 类型   | 描述                                                                                        |
 | ---- | ---- | ------ | ------------------------------------------------------------------------------------------- |
 | url  | ✅   | string | 可以是分享的链接、视频 ID                                                                   |
 | type |      | string | 当该字段等于 `image` 时，返回参数会新增一个 `redirect` 值为视频的地址，同时会重定向到该地址 |
 
 ### videoZuiyou
+
+`/-/video/zuiyou?url=https://www.example.com`
 
 [返回列表目录](#目录)
 
